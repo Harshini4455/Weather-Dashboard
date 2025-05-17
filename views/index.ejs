@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle">
+            <input type="checkbox" id="theme-switch" class="toggle-checkbox">
+            <label for="theme-switch" class="toggle-label">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+                <span class="toggle-ball"></span>
+            </label>
+        </div>
+
+        <!-- Main Dashboard -->
+        <div class="weather-dashboard">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <h1 class="logo">WeatherSphere</h1>
+                <div class="search-container">
+                    <input type="text" id="city-input" placeholder="Search city..." value="<%= defaultCity %>">
+                    <button id="search-btn" class="btn-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button id="location-btn" class="btn-secondary" title="Use my location">
+                        <i class="fas fa-location-arrow"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="dashboard-main">
+                <!-- Current Weather -->
+                <section class="current-weather">
+                    <div class="weather-card">
+                        <div class="weather-main">
+                            <h2 id="city-name">--</h2>
+                            <div class="temperature">
+                                <span id="current-temp">--</span>
+                                <div class="unit-toggle">
+                                    <button class="unit-btn active" data-unit="celsius">°C</button>
+                                    <button class="unit-btn" data-unit="fahrenheit">°F</button>
+                                </div>
+                            </div>
+                            <div id="weather-condition" class="condition">--</div>
+                        </div>
+                        <div class="weather-icon">
+                            <img id="weather-icon" src="/assets/weather-icons/01d.png" alt="Weather Icon">
+                        </div>
+                    </div>
+
+                    <div class="weather-details">
+                        <div class="detail-card">
+                            <i class="fas fa-temperature-high"></i>
+                            <div>
+                                <span>Feels Like</span>
+                                <span id="feels-like">--</span>
+                            </div>
+                        </div>
+                        <div class="detail-card">
+                            <i class="fas fa-tint"></i>
+                            <div>
+                                <span>Humidity</span>
+                                <span id="humidity">--</span>
+                            </div>
+                        </div>
+                        <div class="detail-card">
+                            <i class="fas fa-wind"></i>
+                            <div>
+                                <span>Wind Speed</span>
+                                <span id="wind-speed">--</span>
+                            </div>
+                        </div>
+                        <div class="detail-card">
+                            <i class="fas fa-compress-alt"></i>
+                            <div>
+                                <span>Pressure</span>
+                                <span id="pressure">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Forecast Section -->
+                <section class="forecast-section">
+                    <h3>5-Day Forecast</h3>
+                    <div class="forecast-container" id="forecast-container">
+                        <!-- Forecast items will be inserted here -->
+                    </div>
+                </section>
+
+                <!-- Additional Info -->
+                <section class="additional-info">
+                    <div class="info-card sunrise">
+                        <i class="fas fa-sunrise"></i>
+                        <div>
+                            <span>Sunrise</span>
+                            <span id="sunrise">--:--</span>
+                        </div>
+                    </div>
+                    <div class="info-card sunset">
+                        <i class="fas fa-sunset"></i>
+                        <div>
+                            <span>Sunset</span>
+                            <span id="sunset">--:--</span>
+                        </div>
+                    </div>
+                    <div class="info-card uv-index">
+                        <i class="fas fa-sun"></i>
+                        <div>
+                            <span>UV Index</span>
+                            <span id="uv-index">--</span>
+                        </div>
+                    </div>
+                    <div class="info-card visibility">
+                        <i class="fas fa-eye"></i>
+                        <div>
+                            <span>Visibility</span>
+                            <span id="visibility">-- km</span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Recent Searches -->
+            <aside class="recent-searches">
+                <h3>Recent Searches</h3>
+                <ul id="recent-searches">
+                    <!-- Recent searches will be inserted here -->
+                </ul>
+            </aside>
+        </div>
+
+        <!-- Notification -->
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

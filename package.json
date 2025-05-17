@@ -1,0 +1,21 @@
+{
+    "name": "weather-dashboard",
+    "version": "1.0.0",
+    "description": "Advanced Weather Dashboard with GSAP Animations",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js",
+      "dev": "nodemon app.js"
+    },
+    "dependencies": {
+      "axios": "^1.6.7",
+      "dotenv": "^16.3.1",
+      "ejs": "^3.1.9",
+      "express": "^4.18.2",
+      "gsap": "^3.12.5",
+      "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+      "nodemon": "^3.0.2"
+    }
+  }
